@@ -30,8 +30,8 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   let result = a * b; 
-
-  return [result, 'The product of ' + a + ' and ' + b + ' is ' + result + '.']; 
+  let multiplyString = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
+  return [result, multiplyString]; 
 }
 // console.log(multiply(5, 9));
 
@@ -51,13 +51,26 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
-// Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let sumABindex0 = sum(a, b)[0];
+  let sumABC0 = sum(sumABindex0, c)[0];
+  let multAB = multiply(a, b)[0];
+  let multABC = multiply(multAB, c)[0];
+//  console.log(multABC);
+  let sumString =  `${a} and ${b} and ${c} sum to ${sumABC0}.`;
+//   console.log(sumABindex0, sumABC0, multAB, multABC, sumString);
+  let finalString = `The product of ${a} and ${b} and ${c} is ${multABC}.`;
 
+  return [sumABC0, multABC, sumString, finalString];
+  
 }
-
+// return [16, 140, '4 and 7 and 5 sum to 16.', 'The product of 4 and 7 and 5 is 140.'] 
+// [0] === 16 
+// [1] === 140 
+// [2] === '4 and 7 and 5 sum to 16.' 
+// [3] === 'The product of 4 and 7 and 5 is 140.'
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
