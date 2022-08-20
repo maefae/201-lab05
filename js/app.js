@@ -62,7 +62,6 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   let finalString = `The product of ${a} and ${b} and ${c} is ${multABC}.`;
 
   return [sumABC0, multABC, sumString, finalString];
-  
 }
 // return [16, 140, '4 and 7 and 5 sum to 16.', 'The product of 4 and 7 and 5 is 140.'] 
 // [0] === 16 
@@ -86,14 +85,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
-
 function sumArray(sumArr) { //eslint-disable-line
+  let result = 0;
+  for (let i = 0; i < sumArr.length; i++) {
+    result = sum(sumArr[i], result)[0];
+}
+  return [result, `${sumArr} was passed in as an array of numbers, and ${result} is their sum.`];
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
